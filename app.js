@@ -15,7 +15,7 @@ import routes from './routes.js';
 var app = new Framework7({
   root: '#app', // App root element
   id: 'io.framework7.myapp', // App bundle ID
-  name: 'test', // App name
+  name: 'My App2', // App name
   theme: 'auto', // Automatic theme detection
   // App root data
   data: function () {
@@ -75,51 +75,25 @@ $$('#my-login-screen .login-button').on('click', function () {
   app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
 });
 
-$$(document).on('page:init', '.page[data-name="about"]', function (e) {
 
-
-    $$('#dodawanie').on('click', () => { 
-
-    var a = document.getElementById("a").value; 
-    var podaja = parseInt(a); 
-    var b = document.getElementById("b").value; 
-    var podajb = parseInt(b); 
-    var wynik1 = podaja+podajb;
-      
-        document.getElementById("wynik1").innerHTML="Dodawanie "+wynik1;
-    });
-    $$('#odejmowanie').on('click', () => { 
-
-    var a = document.getElementById("a").value; 
-    var podaja = parseInt(a); 
-    var b = document.getElementById("b").value; 
-    var podajb = parseInt(b); 
-    var wynik2 = podaja-podajb;
-    document.getElementById("wynik2").innerHTML="Odejmowanie "+wynik2;
-
-       
-    });
-   
-    $$('#mnozenie').on('click', () => { 
-
-    var a = document.getElementById("a").value; 
-    var podaja = parseInt(a); 
-    var b = document.getElementById("b").value; 
-    var podajb = parseInt(b); 
-    var wynik3 = podaja*podajb;
-    document.getElementById("wynik3").innerHTML="Mnozenie "+wynik3;
-
-        
-    });
-
- $$('#dzielenie').on('click', () => { 
-
-    var a = document.getElementById("a").value; 
-    var podaja = parseInt(a); 
-    var b = document.getElementById("b").value; 
-    var podajb = parseInt(b); 
-    var wynik4 = podaja/podajb;
-    document.getElementById("wynik4").innerHTML="Dzielenie "+wynik4;
-
-    });
+$$(document).on('page:init', '.page[data-name="moja"]', function(e) {
+ let a=0;
+ let b=0;
+    $$('#dodaj').on('click', () => {
+        let Numer = a++;
+        b++;
+        let Mno = (a*8)-8;
+        let Mno1 = a-1;
+        let Mno2 = "*8="
+        console.log("jd");
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(b);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);  
+  cell1.innerHTML = "8";
+  cell2.innerHTML = Numer;
+     cell3.innerHTML = Mno1+Mno2+Mno;
 });
+})
+
